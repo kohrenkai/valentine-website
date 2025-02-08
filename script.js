@@ -1,5 +1,7 @@
-﻿const noButton = document.getElementById('noButton');
-const yesButton = document.getElementById('yesButton');
+﻿const yesButton = document.getElementById('yesButton');
+const noButton = document.getElementById('noButton');
+const playMusicButton = document.getElementById('playMusicButton');
+const valentineSong = document.getElementById('valentineSong');
 
 let noButtonClicks = 0;
 
@@ -20,4 +22,9 @@ yesButton.addEventListener('click', () => {
         origin: { y: 0.6 }
     });
     alert('Yay! You made me the happiest person ever! ❤️');
+});
+
+playMusicButton.addEventListener('click', () => {
+    valentineSong.play();
+    playMusicButton.style.display = 'none';
 });
