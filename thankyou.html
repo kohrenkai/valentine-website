@@ -61,6 +61,47 @@
       border-radius: 10px; /* Adds rounded corners */
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow */
     }
+
+    /* Style for the button */
+    .button {
+      background-color: #D32F2F; /* Red color */
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-family: 'Pacifico', cursive;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #B71C1C; /* Darker red on hover */
+    }
+
+    /* Style for the itinerary */
+    .itinerary {
+      display: none; /* Hidden by default */
+      margin-top: 20px;
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      text-align: left;
+    }
+
+    .itinerary h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      color: #D32F2F; /* Red color */
+      margin-bottom: 15px;
+    }
+
+    .itinerary p {
+      font-size: 1.2rem;
+      color: #333; /* Darker color for text */
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
@@ -72,6 +113,16 @@
     <!-- Add Image Here -->
     <div class="image-container">
       <img src="Note 9 Feb 2025-1.png" alt="HEHEHAHA" class="couple-photo">
+    </div>
+
+    <!-- Itinerary Button -->
+    <button class="button" onclick="showItinerary()">View Itinerary</button>
+
+    <!-- Itinerary Section -->
+    <div class="itinerary" id="itinerary">
+      <h2>February 16, 2025 Schedule</h2>
+      <p><strong>Lunch:</strong> 1:00 PM - 3:00 PM</p>
+      <p><strong>Afternoon Activity:</strong> 3:00 PM - 5:00 PM (Arcade or Air Clay Making)</p>
     </div>
 
     <!-- Hidden audio player to play the song automatically -->
@@ -91,6 +142,12 @@
         valentineSong.play();
       }, 1000); // 1000ms delay after page load
     };
+
+    // Function to show the itinerary
+    function showItinerary() {
+      const itinerary = document.getElementById('itinerary');
+      itinerary.style.display = 'block'; // Show the itinerary
+    }
   </script>
 
 </body>
