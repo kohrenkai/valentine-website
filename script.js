@@ -26,8 +26,10 @@ yesButton.addEventListener('click', () => {
   // Play the valentine song when "Yes" is clicked
   valentineSong.play();
 
-  // Show an alert to the user
-  alert('Yay! You made me the happiest person ever! ❤️');
+  // Redirect to another page after a small delay (so user can see the confetti)
+  setTimeout(() => {
+    window.location.href = 'thankyou.html';  // Change 'thankyou.html' to the desired page URL
+  }, 3000);  // 3-second delay, adjust as necessary
 });
 
 playMusicButton.addEventListener('click', () => {
