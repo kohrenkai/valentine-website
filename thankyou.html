@@ -8,21 +8,60 @@
 
   <!-- CSS inside the HTML file -->
   <style>
+    /* General body styles */
+    body {
+      background-color: #f3f4f6; /* Soft background color */
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+      width: 80%; /* Makes the container responsive */
+      max-width: 700px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      color: #D32F2F; /* Red color for the heading */
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #333; /* Darker color for text */
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+
     /* Style for the image */
     .image-container {
       margin-top: 20px;
-      text-align: center; /* Centers the image */
+      display: flex;
+      justify-content: center;
     }
 
     .couple-photo {
-      max-width: 80%; /* Ensures the image isn't too large */
+      max-width: 50%; /* Makes the image half the original size */
       height: auto; /* Keeps the aspect ratio */
       border-radius: 10px; /* Adds rounded corners */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow */
     }
   </style>
 </head>
 <body>
+
   <div class="container">
     <h1>Thank You for Saying Yes! 💖</h1>
     <p>You made me the happiest person ever! ❤️</p>
@@ -31,6 +70,21 @@
     <div class="image-container">
       <img src="Note 9 Feb 2025-1.png" alt="HEHEHAHA" class="couple-photo">
     </div>
+
+    <!-- Hidden audio player to play the song automatically -->
+    <audio id="valentineSong" loop>
+      <source src="luther.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
   </div>
+
+  <script>
+    // Play music when the page loads
+    window.onload = function() {
+      const valentineSong = document.getElementById('valentineSong');
+      valentineSong.play();
+    };
+  </script>
+
 </body>
 </html>
