@@ -16,15 +16,24 @@ noButton.addEventListener('click', () => {
 });
 
 yesButton.addEventListener('click', () => {
+  // Trigger confetti animation
   confetti({
     particleCount: 100,
     spread: 70,
     origin: { y: 0.6 }
   });
+
+  // Play the valentine song when "Yes" is clicked
+  valentineSong.play();
+
+  // Show an alert to the user
   alert('Yay! You made me the happiest person ever! ❤️');
 });
 
 playMusicButton.addEventListener('click', () => {
+  // Play the valentine song when playMusicButton is clicked
   valentineSong.play();
+  
+  // Hide the playMusicButton once clicked
   playMusicButton.style.display = 'none';
 });
