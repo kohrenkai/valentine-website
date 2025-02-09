@@ -2,17 +2,34 @@ const yesButton = document.getElementById('yesButton');
 const noButton = document.getElementById('noButton');
 const playMusicButton = document.getElementById('playMusicButton');
 const valentineSong = document.getElementById('valentineSong');
+const messageBox = document.getElementById('messageBox');  // This is the new message box element
+
+// List of messages to show when "No" is clicked
+const messages = [
+  "Please?",
+  "Give me a chance!",
+  "Are you sure?",
+  "Think again!",
+  "You might regret this!",
+  "One last chance!",
+  "Pretty please?",
+  "Don’t break my heart 💔"
+];
+
+// Function to show a random message
+function showRandomMessage() {
+  const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+  messageBox.textContent = randomMessage;
+  messageBox.style.display = 'block'; // Show the message box
+}
 
 let noButtonClicks = 0;
 
 noButton.addEventListener('click', () => {
   noButtonClicks++;
-  const opacity = 1 - (noButtonClicks * 0.2);
-  noButton.style.opacity = opacity;
 
-  if (opacity <= 0) {
-    noButton.style.display = 'none';
-  }
+  // Show a random message each time "No" is clicked
+  showRandomMessage();
 });
 
 yesButton.addEventListener('click', () => {
