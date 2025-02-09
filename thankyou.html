@@ -10,7 +10,9 @@
   <style>
     /* General body styles */
     body {
-      background-color: #f3f4f6; /* Soft background color */
+      background-image: url('https://c8.alamy.com/comp/2DP2GYX/heart-background-red-love-symbol-on-seamless-pattern-vector-repeating-tiles-for-romantic-valentines-day-also-great-for-wedding-wrapping-paper-or-fa-2DP2GYX.jpg');
+      background-size: cover; /* Ensures the image covers the entire screen */
+      background-position: center; /* Centers the background image */
       font-family: 'Pacifico', cursive;
       text-align: center;
       margin: 0;
@@ -19,6 +21,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      color: white; /* White text to contrast with the red background */
     }
 
     .container {
@@ -79,12 +82,17 @@
   </div>
 
   <script>
-    // Play music when the page loads
+    // Trigger the audio when the user clicks "Yes"
     window.onload = function() {
       const valentineSong = document.getElementById('valentineSong');
-      valentineSong.play();
+      
+      // Adding a small delay to give the page time to load
+      setTimeout(() => {
+        valentineSong.play();
+      }, 1000); // 1000ms delay after page load
     };
   </script>
 
 </body>
 </html>
+
