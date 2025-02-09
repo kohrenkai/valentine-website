@@ -1,79 +1,48 @@
-﻿body {
-    font-family: 'Great Vibes', cursive;
-    background-image: url('https://cdn.shopify.com/s/files/1/0553/3912/2841/files/46_1024x1024.png?v=1683697143');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+/* General Body Styles */
+body {
+  font-family: 'Great Vibes', cursive;
+  background-image: url('https://images.unsplash.com/photo-1516834474-48c0abc2a902?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Prevent scrolling */
+  cursor: url('https://example.com/heart-cursor.png'), auto; /* Heart-shaped cursor */
 }
 
-.container {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+/* Heart Container and Animations */
+@keyframes rotateHeart {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-h1 {
-    font-family: 'Pacifico', cursive;
-    color: #d32f2f;
-    font-size: 3rem;
-    margin-bottom: 20px;
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
 }
 
-.buttons {
-    margin-top: 20px;
+.heart {
+  position: absolute;
+  font-size: 2rem;
+  color: #ff6b6b;
+  animation: floatUp 5s ease-out infinite, rotateHeart 10s linear infinite; /* Rotation added */
+  cursor: pointer; /* Make hearts clickable */
 }
 
-button {
-    padding: 15px 30px;
-    font-size: 1.5rem;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    margin: 0 10px;
-    transition: all 0.3s ease;
+/* Heart Explode Animation */
+@keyframes explode {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
 }
 
-#yesButton {
-    background-color: #4caf50;
-    color: white;
+.heart.explode {
+  animation: explode 0.3s ease-out forwards;
 }
 
-#noButton {
-    background-color: #f44336;
-    color: white;
-}
-
-#yesButton:hover {
-    background-color: #45a049;
-    transform: scale(1.1);
-}
-
-#noButton:hover {
-    background-color: #e53935;
-    transform: scale(1.1);
-}
-
-#playMusicButton {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-    #playMusicButton:hover {
-        background-color: #45a049;
-    }
+.heart:nth-child(1) { left: 10%; top: 20%; }
+.heart:nth-child(2) { left: 25%; top: 50%; }
+.heart:nth-child(3) { left: 70%; top: 30%; }
+.heart:nth-child(4) { left: 85%; top: 60%; }
