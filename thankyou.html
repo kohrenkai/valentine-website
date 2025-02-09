@@ -5,12 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You!</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+
+  <!-- CSS inside the HTML file -->
+  <style>
+    /* Style for the image */
+    .image-container {
+      margin-top: 20px;
+      text-align: center; /* Centers the image */
+    }
+
+    .couple-photo {
+      max-width: 80%; /* Ensures the image isn't too large */
+      height: auto; /* Keeps the aspect ratio */
+      border-radius: 10px; /* Adds rounded corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>Thank You for Saying Yes! 💖</h1>
     <p>You made me the happiest person ever! ❤️</p>
+
+    <!-- Add Image Here -->
+    <div class="image-container">
+      <img src="couple-photo.jpg" alt="A picture of us" class="couple-photo">
+    </div>
   </div>
 </body>
 </html>
